@@ -1,30 +1,37 @@
-MYSHELL USER MANUAL
+# MyShell - A Simple Command Line Interpreter
 
-Introduction:
-This is a simple shell implementation named 'myshell'. It supports internal commands and execution of external programs.
+MyShell is a Unix-based shell that supports built-in commands and executes external programs. It works in both **interactive mode** (user input) and **batch mode** (reading commands from a file). 
 
-Usage:
-1. Run the shell: `./myshell`
-2. Execute commands interactively or via batch file: `./myshell batchfile`
+## Compilation & Execution
+To compile the shell, run `make`. To clean compiled files, run `make clean`.  
+To start MyShell interactively, run `./myshell`.  
+To execute commands from a file, use `./myshell batchfile`.
 
-Supported Internal Commands:
-- `cd <directory>`: Change the current directory.
-- `clr`: Clear the screen.
-- `dir <directory>`: List contents of a directory.
-- `environ`: Print environment variables.
-- `echo <message>`: Print a message.
-- `help`: Show this manual.
-- `pause`: Wait for user input.
-- `quit`: Exit the shell.
+## Built-in Commands
+- `cd <directory>`: Change the working directory. Prints current directory if no argument is given.
+- `clr`: Clears the screen.
+- `dir <directory>`: Lists files in the specified directory.
+- `environ`: Prints all environment variables.
+- `echo <message>`: Displays text on the screen.
+- `help`: Shows this `readme` file.
+- `pause`: Waits for the user to press `Enter` before continuing.
+- `quit`: Exits the shell.
 
-External Commands:
-- Any other command is executed as a separate process.
+## Executing External Commands
+Any command that is not built-in runs as an external program. Examples:  
+`ls -l`, `gcc --version`, `ping google.com`.  
 
-Batch Mode:
-- Provide a file as an argument to execute commands from it automatically.
+## Batch Mode Example
+Create a file (`commands.txt`) with:
+```
+cd /home/user
+dir
+echo Running scripts
+quit
+```
+Run it using `./myshell commands.txt`.
 
-Compilation:
-- Run `make` to compile the shell.
-- Run `make clean` to remove the executable.
-
-Enjoy using myshell!
+## Notes
+- Environment variables: `shell` (stores the path of `myshell`), `parent` (tracks execution).
+- No support for pipes (`|`) or background processes (`&`).
+- Only text-based batch files are supported.

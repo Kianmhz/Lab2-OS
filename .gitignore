@@ -1,2 +1,3 @@
 myshell
 *.o
+*.ds_store
