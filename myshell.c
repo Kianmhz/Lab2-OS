@@ -139,7 +139,7 @@ void echo_command(char **args) {
 }
 
 void display_help() {
-    system("more readme");
+    system("more README.md");
 }
 
 void pause_shell() {
