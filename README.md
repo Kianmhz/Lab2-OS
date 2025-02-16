@@ -22,7 +22,7 @@ Any command that is not built-in runs as an external program. Examples:
 `ls -l`, `gcc --version`, `ping google.com`.  
 
 ## Batch Mode Example
-Create a file (`commands.txt`) with:
+Create a file (`commands.txt`) with a list of commands, e.g.:
 ```
 cd /home/user
 dir
